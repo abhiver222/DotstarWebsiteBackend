@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="login">
+  <p id="login-title">{{ unique.login_saying }}</p>
+  <span id="login-details">{{ unique.login_details|safe }}</span>
+  <form method="post">
+    <input type="hidden" name="redirect" value="{{ redirect_url }}"/>
+    <input class="field {{ unique.extra_class }}" type="text" name="username" placeholder="NetID" required/>
+    <input class="field {{ unique.extra_class }}" type="password" name="password" placeholder="UIN (check your I-Card)" required/>
+    <br>
+    <input class="go" type="submit" value="Log in"/>
+  </form>
+</div>
+<footer>
+  <span id="footer-content">
+    <a href="https://github.com/Gibolt/Foundry" target="_blank">made with &hearts;</a> by <a href="mailto:web@196.gdyer.de">your friendly 196 course staff web team</a>
+  </span>
+</footer>
+{% endblock %}

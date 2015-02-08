@@ -1,0 +1,121 @@
+header {
+    display:block;
+    -moz-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    user-select:none;
+    cursor:default;
+    width:100%;
+    color:#333;
+    font-size:24px;
+    line-height:48px;
+    height:48px;
+    background:#fff;
+    text-align:left;
+    -webkit-box-shadow:0px 0px 2px .5px #333;
+    -moz-box-shadow:0px 0px 2px .5px #333;
+    box-shadow:0px 0px 2px .5px #333;
+    position:fixed;
+}
+a {
+    text-decoration:none;
+    color:#333;
+    -webkit-transition:all 0.15s ease-in-out 0s;
+    -moz-transition:all 0.15s ease-in-out 0s;
+    transition:all 0.15s ease-in-out 0s;
+}
+a:hover {
+    color:#C0C0C0;
+}
+#content {
+    padding-top:4em;
+}
+#welcome {
+    margin-top:0;
+}
+#header-content {
+    padding-left:10px;
+}
+#right-header {
+    float:right;
+    font-size:70%;
+    padding-right:10px;
+}
+#subheader {
+    font-size:60%;
+    opacity:.5;
+    padding-left:1em;
+}
+.go {
+    text-align:center;
+    width:70px;
+    line-height:0;
+    margin-top:5px;
+    height:30px;
+}
+#submission {
+    min-width:100%;
+    text-align:center;
+}
+#submission .go {
+    margin-top:1em;
+    width:180px;
+    height:40px;
+}
+.question {
+    width:40%;
+    padding:1px 10px 15px 10px;
+    -webkit-box-shadow:.5px .5px .5px 1px #D9D9D9;
+    -moz-box-shadow:.5px .5px .5px 1px #D9D9D9;
+    box-shadow:.5px .5px .5px 1px #D9D9D9;
+}
+.question:last-child {
+    margin-bottom:3em;
+}
+.left {
+    float:left;    
+    margin-left:7%;
+}
+.right {
+    float:right;
+    margin-right:7%;
+}
+.question-clarification {
+    color:#C0C0C0;
+    margin-top:-20px;
+}
+input[type="text"],input[type="email"] {
+    width:80%;
+    border-bottom:1px dashed #D9D9D9;
+}
+input[type="tel"] {
+    width:150px;
+    border-bottom:1px dashed #D9D9D9;
+}
+textarea {
+    width:99%;
+    border:1px dashed #D9D9D9;
+    resize:none;
+    font-family:'Lato', sans-serif;
+    color:#333;
+}
+@media (max-width: 400px) {
+    #header-content {padding-left:10px;}
+    #subheader {font-size:50%;}
+}
+@media (max-width: 740px) {
+    .left,.right {
+	margin:0 auto;
+	float:none;
+    }
+    .question {
+	width:80%;
+    }
+    header {font-size:20px;}
+}
+@media (max-width: 450px) {
+    #subheader {display:none;}
+    .question {
+	width:90%;
+    }
+}

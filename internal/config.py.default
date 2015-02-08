@@ -1,0 +1,5 @@
+DB_HOST = 'localhost'
+DB_PORT = 3306
+DB_NAME = 'foundry_backend'
+DB_PASSWORD = None
+DB_USER = 'root'

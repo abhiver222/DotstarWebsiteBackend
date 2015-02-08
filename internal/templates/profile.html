@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<header>
+  <span id="header-content">
+    <span>{{ page.course_name }}</span>
+    <span id="subheader">
+      welcome to CS 196, {{ unique['firstname'] }}
+    </span>
+    <span id="right-header">
+      <form method="GET" action="logout">
+	<input type="submit" class="go" value="&larr; logout" />
+      </form>
+    </span>
+</header>
+<div id="content">
+  <p id="welcome" align="center">{{ message }}</p>
+  <form method="POST">
+    {% for question in questions %}
+    <div class="question {{ question.align }}">
+      <h4>{{ question.question }}</h4>
+      <p class="question-clarification">{{ question.clarification|safe }}</p>
+      {% for input in question.inputs %}
+      {% if question.type=="radio" %}
+      <input type="radio"
+        name="{{ question.name }}"
+        value="{{ input.value }}"
+        {% if input.value == question.year %}
+        checked
+        {% endif %}
+        required/> {{ input.description }}<br>    
+
+      {% elif question.type == "textarea" %}
+      <textarea rows="{{ input.rows }}" name="{{ question.name }}">{{ input.value }}</textarea>
+
+      {% else %}
+      <input type="{{ question.type }}" name="{{ question.name }}" placeholder="{{ input.placeholder }}" value="{{ input.value }}" maxlength="{{ input.maxlength }}" required/>
+
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% endfor %}
+    <div id="submission">
+      <input type="submit" class="go" value="save everything" />
+    </div>
+  </form>
+  <br><br>
+</div>
+{% endblock %}

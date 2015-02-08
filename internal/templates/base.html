@@ -1,0 +1,27 @@
+<!doctype html>
+<html>  
+  <title>{{ page.name }} &middot; {{ page.title }}</title>
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta name="description" content="{{ page.description }}" />
+  <meta property="og:description" content="{{ page.description }}" />  
+  <meta name="viewport" id="viewport" content="width=device-width, user-scalable=no, minimum-scale=1, maximum-scale=1" />
+  <link rel="canonical" href="{{ page.home }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato" />
+  {% if page.custom_css|length > 4 %}
+  <link rel="stylesheet" href="{{ url_for('static', filename=page.custom_css) }}" />
+  {% endif %}
+  <!-- <link rel="icon" href="{{ url_for('static', filename='images/fav.png') }}" /> !-->
+  {% block content %}{% endblock %}
+  {% if page.js|length > 3 %}
+  <script src="{{ page.js }}"></script>
+  {% endif %}
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-58880062-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</html>

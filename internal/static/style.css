@@ -1,0 +1,20 @@
+html, body, h1, header, input, span, form {margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+html {font-family:'Lato', sans-serif;height:100%;}
+textarea, input {outline:none; box-shadow:none;}
+.go {
+    cursor:pointer;
+    width:30%;
+    height:40px;
+    border:none;
+    border-radius:2px;
+    background-color:#eee;
+    color:#333;
+    padding:1px;
+    -webkit-transition:all 0.15s ease-in-out 0s;
+    -moz-transition:all 0.15s ease-in-out 0s;
+    transition:all 0.15s ease-in-out 0s;
+}
+.go:hover {
+    background-color:#333;
+    color:#eee;
+}

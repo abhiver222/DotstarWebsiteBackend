@@ -1,0 +1,45 @@
+== CS 196, the Foundry --- web server
+
+this server is *http://uiuc.rocks[live]*
+
+=== running the server for development
+
+==== make the data(base)
+* create a mysql database called +foundry_backend+
+* choose one:
+** real data: if you have access, download the student spreadsheet from Drive, save as csv, rename to +students.csv+ so it will be .gitignored, put in +/internal+, run +python load_csv.py students.csv+
+** +python load_examples.py <number of fake users/admins to create>+
+
+==== +config.py+
+* create +config.py+ add...
+[source,python]
+----------------------------------------------------------------
+DB_HOST = 'localhost'
+DB_PORT = 3306
+DB_NAME = 'foundry_backend'
+DB_PASSWORD = None # or 'Your Password' if you made one
+DB_USER = 'root'
+----------------------------------------------------------------
+
+==== run it
+* +sudo pip install -r requirements.txt+
+* +python backend.py+
+* navigate to +localhost:5000+
+
+
+=== pending improvements
+* integrate corporate site when completed
+* get students into groups within database
+** get public GitHub repo names from each group
+* create core ui for students to use to track their progress (this will replace the forms as soon as we have ubiquity):
+** GitHub commit tracker
+** Homework announcements
+** Published plans for class (schedule) and microlessons
+** Daily tips about programming/workflow?
+** Other...
+* backend for course staff to check:
+** Project Euler problems
+*** image processing
+** GitHub commits as soon as group repos are established
+** add plans for class/microlessons and homework
+

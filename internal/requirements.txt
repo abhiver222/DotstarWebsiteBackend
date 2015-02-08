@@ -1,0 +1,5 @@
+flask
+pymysql
+fake-factory
+Pillow
+pytesseract
